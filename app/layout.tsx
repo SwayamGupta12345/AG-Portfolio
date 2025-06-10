@@ -4,8 +4,10 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Advocate Atul Gupta - Top Lawyer, Legal Consultant, Attorney & Law Expert in India',
   description: 'Expert legal advice and representation by Advocate Atul Gupta. Services include civil, criminal, corporate, family, property, and constitutional law. Trusted legal consultant for individuals, startups, and businesses. Book consultations online or offline.',
+  icons: {
+    icon: '/favicon.ico', // You can also add png versions if needed
+  },
 }
-
 
 export default function RootLayout({
   children,
