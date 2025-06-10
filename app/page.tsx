@@ -72,46 +72,56 @@ export default function AdvocatePortfolio() {
       {/* Hero Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-100 h-100  flex items-center justify-center mx-auto mb-8">
+          {/* Wrap content and image in flex container */}
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12">
+            {/* Left side: Text content */}
+            <div className="max-w-4xl text-center lg:text-left flex-1">
+              {/* <div className="w-100 h-100 flex items-center justify-center mx-auto mb-8">
+          <img
+            src="/advocate_icon.jpg"
+            alt="Advocate"
+            className="w-100 h-40 text-white"
+          />
+        </div> */}
+              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+                Atul Gupta
+              </h1>
+              <p className="text-xl lg:text-2xl text-muted-foreground mb-4">
+                Advocate & C.A. (Final)
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                <Badge variant="secondary" className="text-sm">
+                  GST Consultant
+                </Badge>
+                <Badge variant="secondary" className="text-sm">
+                  Income Tax Advisor
+                </Badge>
+                <Badge variant="secondary" className="text-sm">
+                  Accounting Services
+                </Badge>
+              </div>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
+                Providing comprehensive legal and financial solutions with over
+                a decade of experience in taxation, corporate law, and
+                accounting services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" asChild>
+                  <Link href="#contact">Schedule Consultation</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="#services">View Services</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right side: Image */}
+            <div className="flex-shrink-0 hidden lg:block">
               <img
-                src="/advocate_icon.jpg"
-                alt="Advocate"
-                className="w-100 h-40 text-white"
+                src="/profile_right.jpg"
+                alt="Profile"
+                className="w-[400px] h-auto rounded-md shadow-lg"
               />
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
-              Atul Gupta
-            </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-4">
-              Advocate & Chartered Accountant (Final)
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="text-sm">
-                GST Specialist
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                Income Tax Expert
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                Legal Consultant
-              </Badge>
-              <Badge variant="secondary" className="text-sm">
-                Accounting Services
-              </Badge>
-            </div>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Providing comprehensive legal and financial solutions with over a
-              decade of experience in taxation, corporate law, and accounting
-              services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link href="#contact">Schedule Consultation</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="#services">View Services</Link>
-              </Button>
             </div>
           </div>
         </div>
@@ -127,24 +137,24 @@ export default function AdvocatePortfolio() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-lg text-muted-foreground mb-6">
-                  With extensive experience in both legal practice and financial
-                  consulting, I provide comprehensive solutions for individuals
-                  and businesses navigating complex legal and taxation matters.
+                  With extensive experience in both Income Tax and financial
+                  consulting, We provide comprehensive solutions for individuals
+                  and corporates navigating complex legal and taxation matters.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6">
-                  As a practicing advocate and chartered accountant (final), I
-                  bring a unique perspective that combines legal expertise with
-                  financial acumen to deliver optimal outcomes for my clients.
+                  As a practicing advocate, We bring a unique perspective that
+                  combines legal expertise with financial acumen to deliver
+                  optimal outcomes for our clients.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-primary">10+</div>
+                    <div className="text-2xl font-bold text-primary">15+</div>
                     <div className="text-sm text-muted-foreground">
                       Years Experience
                     </div>
                   </div>
                   <div className="text-center p-4 bg-slate-50 rounded-lg">
-                    <div className="text-2xl font-bold text-primary">500+</div>
+                    <div className="text-2xl font-bold text-primary">100+</div>
                     <div className="text-sm text-muted-foreground">
                       Cases Handled
                     </div>
@@ -230,27 +240,6 @@ export default function AdvocatePortfolio() {
                     <li>• Income Tax Returns Filing</li>
                     <li>• Tax Assessment Proceedings</li>
                     <li>• Appeals & Representations</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Scale className="w-6 h-6 text-primary" />
-                  </div>
-                  <CardTitle>Legal Consultation</CardTitle>
-                  <CardDescription>
-                    Professional legal advice and representation across various
-                    practice areas
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Corporate Legal Advisory</li>
-                    <li>• Contract Drafting & Review</li>
-                    <li>• Litigation Support</li>
-                    <li>• Compliance Management</li>
                   </ul>
                 </CardContent>
               </Card>
