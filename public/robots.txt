@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://advocate-atul-gupta.vercel.app
+
+# Sitemaps
+Sitemap: https://advocate-atul-gupta.vercel.app/sitemap.xml
