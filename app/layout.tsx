@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+<meta name="google-site-verification" content="CO6R1KEUWL4LkmfgBzXjGZ92O51bpPPB7A3f6sHLkB8" />
 export const metadata: Metadata = {
   title:
     "Advocate Atul Gupta | Best Lawyer in India Corporate Law",
   description:
     "Looking for the best lawyer in India? Advocate Atul Gupta offers expert legal services in civil, criminal, family, property, corporate, and constitutional law. Trusted legal consultant for startups, businesses & individuals. Schedule your online or offline legal consultation now.",
+  authors: [
+    {
+      name: "Advocate Atul Gupta",
+      url: "https://advocate-atul-gupta.vercel.app",
+    },
+  ],
   keywords: [
     "Advocate Atul Gupta",
     "Best Lawyer in India",
@@ -60,6 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="CO6R1KEUWL4LkmfgBzXjGZ92O51bpPPB7A3f6sHLkB8" />
+      </head>
       <body>{children}</body>
     </html>
   );
