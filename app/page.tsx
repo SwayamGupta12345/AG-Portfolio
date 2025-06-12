@@ -120,7 +120,7 @@ export default function AdvocatePortfolio() {
             {/* Right side: Image */}
             <div className="flex-shrink-0 hidden lg:block">
               <img
-                src="/profile_right.jpg"
+                src="/profile_top.jpg"
                 alt="Profile"
                 className="w-[400px] h-auto rounded-md shadow-lg"
               />
