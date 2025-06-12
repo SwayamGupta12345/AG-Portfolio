@@ -29,7 +29,11 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData, "Service ID:", serviceID, "Template ID:", templateID, "Public Key:", publicKey);
-
+    const now = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
     try {
       const templateParams = {
         name: `${formData.firstName} ${formData.lastName}`,
@@ -37,6 +41,7 @@ export default function Contact() {
         phone: formData.phone,
         service: formData.service,
         message: formData.message,
+        time: now, // ⬅️ Added time here
       };
 
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
