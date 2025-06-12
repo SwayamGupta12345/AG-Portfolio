@@ -70,19 +70,21 @@ export default function AdvocatePortfolio() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white mt-[-40px]">
         <div className="container mx-auto px-4 lg:px-6">
           {/* Wrap content and image in flex container */}
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12">
             {/* Left side: Text content */}
             <div className="max-w-4xl text-center lg:text-left flex-1">
-              {/* <div className="w-100 h-100 flex items-center justify-center mx-auto mb-8">
-          <img
-            src="/advocate_icon.jpg"
-            alt="Advocate"
-            className="w-100 h-40 text-white"
-          />
-        </div> */}
+              {/* <div className="w-[60%] h-auto  flex items-center justify-center mx-auto mt-2 mb-8 md:w-[40%]  lg:hidden"> */}
+              <div className="w-[65%] max-w-[300px] md:w-[40%] h-auto flex items-center justify-center mx-auto mt-2 mb-8 lg:hidden">
+                <img
+                  src="/profile_top.jpg"
+                  alt="Advocate"
+                  className="w-full h-auto rounded-xl shadow-md"
+                />
+              </div>
+
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Atul Gupta
               </h1>
