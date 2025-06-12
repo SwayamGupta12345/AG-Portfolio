@@ -71,6 +71,11 @@ export default function RootLayout({
           name="google-site-verification"
           content="CO6R1KEUWL4LkmfgBzXjGZ92O51bpPPB7A3f6sHLkB8"
         />
+        <meta property="og:title" content="Advocate Atul Gupta" />
+        <meta property="og:description" content="Trusted legal representation for individuals, startups & businesses in India. Book an online or in-person consultation with Advocate Atul Gupta today." />
+        <meta property="og:image" content="/og-image.jpg" />
+
+        <meta property="og:type" content="website" />
       </head>
       <body>{children}</body>
     </html>
