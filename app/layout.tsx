@@ -3,10 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://advocate-atul-gupta.vercel.app"), // ✅ Fix for Open Graph
-  title: "Advocate Atul Gupta | Best Lawyer in India Corporate Law",
+  title: "Advocate Atul Gupta | Top Lawyer in India Corporate Law",
   description:
-    "Looking for the best lawyer in India? Advocate Atul Gupta offers expert legal services in civil, criminal, family, property, corporate, and constitutional law. Trusted legal consultant for startups, businesses & individuals. Schedule your online or offline legal consultation now.",
-  authors: [
+    "Looking for the top lawyer in India? Advocate Atul Gupta offers expert legal services in corporate and constitutional law. Trusted legal consultant for startups, businesses & individuals. Schedule your online or offline legal consultation now.",
+    applicationName: 'Advocate Atul Gupta',
+    authors: [
     {
       name: "Advocate Atul Gupta",
       url: "https://advocate-atul-gupta.vercel.app",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   ],
   keywords: [
     "Advocate Atul Gupta",
-    "Best Lawyer in India",
+    "Top Lawyer in India",
     "Corporate Lawyer India",
     "Legal Advice Online",
     "Income Tax Lawyer India",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg", // Customize with a branded image
+        url: "/profile_top.jpg", // Customize with a branded image
         width: 1200,
         height: 630,
         alt: "Advocate Atul Gupta - Top Lawyer in India",
@@ -67,13 +68,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+         <link rel="icon" href="/favicon.ico" />
+         <meta name="description" content="Trusted legal representation for individuals, startups & businesses in India. Book an online or in-person consultation with Advocate Atul Gupta today." />
         <meta
           name="google-site-verification"
           content="CO6R1KEUWL4LkmfgBzXjGZ92O51bpPPB7A3f6sHLkB8"
         />
         <meta property="og:title" content="Advocate Atul Gupta" />
         <meta property="og:description" content="Trusted legal representation for individuals, startups & businesses in India. Book an online or in-person consultation with Advocate Atul Gupta today." />
-        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image" content="/profile_top.jpg" />
 
         <meta property="og:type" content="website" />
       </head>
