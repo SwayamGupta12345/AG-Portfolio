@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://advocate-atul-gupta.vercel.app/sitemap.xml
