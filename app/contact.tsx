@@ -28,7 +28,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData, "Service ID:", serviceID, "Template ID:", templateID, "Public Key:", publicKey);
+  
     const now = new Date().toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
     dateStyle: "medium",
