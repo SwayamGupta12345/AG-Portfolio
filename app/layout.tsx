@@ -109,6 +109,7 @@ export default function RootLayout({
           content="https://advocate-atul-gupta.vercel.app"
         />
         <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Advocate Atul Gupta" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
