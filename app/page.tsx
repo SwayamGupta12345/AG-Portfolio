@@ -82,7 +82,7 @@ export default function EnhancedAdvocatePortfolio() {
     });
     try {
       const templateParams = {
-        name: `${formData.firstName}`,
+        name: formData.firstName,
         email: formData.email,
         phone: formData.phone,
         service: formData.service,
@@ -120,12 +120,12 @@ export default function EnhancedAdvocatePortfolio() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <div className="w-6 h-6  rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10  rounded-full flex items-center justify-center shadow-lg">
               {/* <Scale className="w-6 h-6 text-white" /> */}
               <img
                 src="/advocate_icon.jpg"
                 alt="Advocate"
-                className="w-6 h-6"
+                className="w-10 h-10"
               />
             </div>
             <div>
@@ -251,11 +251,22 @@ export default function EnhancedAdvocatePortfolio() {
                   transition={{ delay: index * 0.1 + 0.8 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Badge
-                    className={`text-sm px-4 py-2 bg-gradient-to-r ${badge.color} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const section = document.querySelector("#services");
+                      if (section) {
+                        section.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                   >
-                    {badge.text}
-                  </Badge>
+                    <Badge
+                      className={`text-sm px-4 py-2 bg-gradient-to-r ${badge.color} text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300`}
+                    >
+                      {badge.text}
+                    </Badge>
+                  </a>
                 </motion.div>
               ))}
             </motion.div>
@@ -569,20 +580,6 @@ export default function EnhancedAdvocatePortfolio() {
                   bgColor: "from-purple-50 to-pink-50",
                 },
                 {
-                  icon: Scale,
-                  title: "Corporate Legal Consultation",
-                  description:
-                    "Professional legal advice and representation across various practice areas",
-                  features: [
-                    "Corporate Legal Advisory",
-                    "Contract Drafting & Review",
-                    "Litigation Support",
-                    "Compliance Management",
-                  ],
-                  color: "from-indigo-500 to-blue-500",
-                  bgColor: "from-indigo-50 to-blue-50",
-                },
-                {
                   icon: Users,
                   title: "Accounting Services",
                   description:
@@ -596,6 +593,21 @@ export default function EnhancedAdvocatePortfolio() {
                   color: "from-green-500 to-emerald-500",
                   bgColor: "from-green-50 to-emerald-50",
                 },
+                 {
+                  icon: Scale,
+                  title: "Corporate Legal Consultation",
+                  description:
+                    "Professional legal advice and representation across various practice areas",
+                  features: [
+                    "Corporate Legal Advisory",
+                    "Contract Drafting & Review",
+                    "Litigation Support",
+                    "Compliance Management",
+                  ],
+                  color: "from-indigo-500 to-blue-500",
+                  bgColor: "from-indigo-50 to-blue-50",
+                },
+               
                 {
                   icon: Briefcase,
                   title: "Business Setup",
@@ -868,7 +880,7 @@ export default function EnhancedAdvocatePortfolio() {
                         </label>
                         <input
                           type="text"
-                          name="name"
+                          name="firstName"
                           value={formData.firstName}
                           onChange={handleChange}
                           className="w-full px-5 py-3.5 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 bg-white/90 shadow-sm transition-all duration-300"
