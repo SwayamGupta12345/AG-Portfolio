@@ -494,7 +494,7 @@ export default function EnhancedAdvocatePortfolio() {
                     {[
                       "Bachelor of Laws (LL.B)",
                       "Chartered Accountant (Final)",
-                      "Bar Council Registration",
+                      "Member of Nainital Bar Council",
                     ].map((qualification, index) => (
                       <motion.div
                         key={qualification}
