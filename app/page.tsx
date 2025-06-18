@@ -177,7 +177,7 @@ export default function EnhancedAdvocatePortfolio() {
         {/* Animated gradient background */}
         <div className="absolute inset-0 z-0">
           <motion.div
-            className="w-full h-full absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10"
+            className=" absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 animate-gradient"
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
             transition={{
               duration: 20,
@@ -190,7 +190,7 @@ export default function EnhancedAdvocatePortfolio() {
         <div className="container flex flex-col xl:flex-row items-center justify-between gap-10 px-4 lg:px-6 relative mx-auto">
           {/* Left: Text Content */}
           <motion.div
-            className="max-w-4xl text-center  ml-[10%] xl:text-left flex-1"
+            className="max-w-4xl text-center  lg:ml-[10%] xl:text-left flex-1"
             variants={staggerContainer}
             initial="initial"
             animate="animate"
@@ -234,14 +234,20 @@ export default function EnhancedAdvocatePortfolio() {
               className="flex flex-wrap justify-center xl:justify-start gap-3 mb-8"
             >
               {[
-                { text: "GST Specialist", color: "from-blue-500 to-cyan-500" },
+                {
+                  text: "GST Specialist",
+                  color: "from-blue-500 to-cyan-500",
+                  go: "GSTServices",
+                },
                 {
                   text: "Income Tax Expert",
                   color: "from-purple-500 to-pink-500",
+                  go: "IncomeTaxServices",
                 },
                 {
                   text: "Accounting Services",
                   color: "from-indigo-500 to-blue-500",
+                  go: "AccountingServices",
                 },
               ].map((badge, index) => (
                 <motion.div
@@ -252,10 +258,10 @@ export default function EnhancedAdvocatePortfolio() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <a
-                    href="#services"
+                    href={`#${badge.go}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      const section = document.querySelector("#services");
+                      const section = document.querySelector(`#${badge.go}`);
                       if (section) {
                         section.scrollIntoView({ behavior: "smooth" });
                       }
@@ -542,154 +548,180 @@ export default function EnhancedAdvocatePortfolio() {
               </p>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-6"></div>
             </motion.div>
+            <div className="flex flex-col lg:flex-row gap-8">
+              <motion.div
+                className="grid lg:grid-cols-1  gap-8 flex-1"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                {[
+                  {
+                    icon: FileText,
+                    title: "GST Services",
+                    id: "GSTServices",
+                    description:
+                      "Complete GST compliance, registration, returns filing, and advisory services",
+                    features: [
+                      "GST Registration & Compliance",
+                      "Monthly/Quarterly Returns",
+                      "GST Audit & Assessment",
+                      "Input Tax Credit Optimization",
+                    ],
+                    color: "from-blue-500 to-cyan-500",
+                    bgColor: "from-blue-50 to-cyan-50",
+                  },
+                  {
+                    icon: Calculator,
+                    title: "Income Tax",
+                    id: "IncomeTaxServices",
+                    description:
+                      "Expert income tax planning, filing, and representation services",
+                    features: [
+                      "Tax Planning & Advisory",
+                      "Income Tax Returns Filing",
+                      "Tax Assessment Proceedings",
+                      "Appeals & Representations",
+                    ],
+                    color: "from-purple-500 to-pink-500",
+                    bgColor: "from-purple-50 to-pink-50",
+                  },
+                  {
+                    icon: Users,
+                    title: "Accounting Services",
+                    id: "AccountingServices",
+                    description:
+                      "Complete accounting and bookkeeping solutions for businesses",
+                    features: [
+                      "Financial Statement Preparation",
+                      "Bookkeeping & Accounting",
+                      "Audit & Assurance",
+                      "Financial Planning",
+                    ],
+                    color: "from-green-500 to-emerald-500",
+                    bgColor: "from-green-50 to-emerald-50",
+                  },
+                  {
+                    icon: Scale,
+                    title: "Corporate Legal Consultation",
+                    id: "corporateLegalConsultation",
+                    description:
+                      "Professional legal advice and representation across various practice areas",
+                    features: [
+                      "Corporate Legal Advisory",
+                      "Contract Drafting & Review",
+                      "Litigation Support",
+                      "Compliance Management",
+                    ],
+                    color: "from-indigo-500 to-blue-500",
+                    bgColor: "from-indigo-50 to-blue-50",
+                  },
 
-            <motion.div
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              {[
-                {
-                  icon: FileText,
-                  title: "GST Services",
-                  description:
-                    "Complete GST compliance, registration, returns filing, and advisory services",
-                  features: [
-                    "GST Registration & Compliance",
-                    "Monthly/Quarterly Returns",
-                    "GST Audit & Assessment",
-                    "Input Tax Credit Optimization",
-                  ],
-                  color: "from-blue-500 to-cyan-500",
-                  bgColor: "from-blue-50 to-cyan-50",
-                },
-                {
-                  icon: Calculator,
-                  title: "Income Tax",
-                  description:
-                    "Expert income tax planning, filing, and representation services",
-                  features: [
-                    "Tax Planning & Advisory",
-                    "Income Tax Returns Filing",
-                    "Tax Assessment Proceedings",
-                    "Appeals & Representations",
-                  ],
-                  color: "from-purple-500 to-pink-500",
-                  bgColor: "from-purple-50 to-pink-50",
-                },
-                {
-                  icon: Users,
-                  title: "Accounting Services",
-                  description:
-                    "Complete accounting and bookkeeping solutions for businesses",
-                  features: [
-                    "Financial Statement Preparation",
-                    "Bookkeeping & Accounting",
-                    "Audit & Assurance",
-                    "Financial Planning",
-                  ],
-                  color: "from-green-500 to-emerald-500",
-                  bgColor: "from-green-50 to-emerald-50",
-                },
-                 {
-                  icon: Scale,
-                  title: "Corporate Legal Consultation",
-                  description:
-                    "Professional legal advice and representation across various practice areas",
-                  features: [
-                    "Corporate Legal Advisory",
-                    "Contract Drafting & Review",
-                    "Litigation Support",
-                    "Compliance Management",
-                  ],
-                  color: "from-indigo-500 to-blue-500",
-                  bgColor: "from-indigo-50 to-blue-50",
-                },
-               
-                {
-                  icon: Briefcase,
-                  title: "Business Setup",
-                  description:
-                    "End-to-end business incorporation and compliance services",
-                  features: [
-                    "Company Registration",
-                    "Partnership Deed",
-                    "License & Permits",
-                    "Regulatory Compliance",
-                  ],
-                  color: "from-orange-500 to-red-500",
-                  bgColor: "from-orange-50 to-red-50",
-                },
-                {
-                  icon: Clock,
-                  title: "Advisory Services",
-                  description:
-                    "Strategic business and financial advisory for growth and compliance",
-                  features: [
-                    "Business Strategy",
-                    "Risk Management",
-                    "Regulatory Advisory",
-                    "Financial Consulting",
-                  ],
-                  color: "from-teal-500 to-cyan-500",
-                  bgColor: "from-teal-50 to-cyan-50",
-                },
-              ].map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  variants={fadeInUp}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Card
-                    className={`h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-gradient-to-br ${service.bgColor} group  relative`}
+                  {
+                    icon: Briefcase,
+                    title: "Business Setup",
+                    id: "businessSetup",
+                    description:
+                      "End-to-end business incorporation and compliance services",
+                    features: [
+                      "Company Registration",
+                      "Partnership Deed",
+                      "License & Permits",
+                      "Regulatory Compliance",
+                    ],
+                    color: "from-orange-500 to-red-500",
+                    bgColor: "from-orange-50 to-red-50",
+                  },
+                  {
+                    icon: Clock,
+                    title: "Advisory Services",
+                    id: "advisoryServices",
+                    description:
+                      "Strategic business and financial advisory for growth and compliance",
+                    features: [
+                      "Business Strategy",
+                      "Risk Management",
+                      "Regulatory Advisory",
+                      "Financial Consulting",
+                    ],
+                    color: "from-teal-500 to-cyan-500",
+                    bgColor: "from-teal-50 to-cyan-50",
+                  },
+                ].map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    id={service.id}
+                    variants={fadeInUp}
+                    whileHover={{ y: -10, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <CardHeader className="relative z-10">
-                      <div
-                        className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110`}
-                      >
-                        <service.icon className="w-7 h-7 text-white" />
-                      </div>
-                      <CardTitle className="text-2xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
-                        {service.title}
-                      </CardTitle>
-                      <CardDescription className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700">
-                        {service.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="relative z-10">
-                      <ul className="space-y-4">
-                        {service.features.map((feature, featureIndex) => (
-                          <motion.li
-                            key={feature}
-                            className="flex items-start gap-3 text-sm text-slate-600 group-hover:text-slate-700 transition-colors"
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{
-                              delay: featureIndex * 0.1,
-                              duration: 0.3,
-                            }}
-                            viewport={{ once: true }}
-                          >
-                            <div
-                              className={`w-1.5 h-1.5 text-lg bg-gradient-to-r ${service.color} rounded-full mt-2 flex-shrink-0`}
-                            ></div>
-                            <span
-                              className={`text-base font-medium bg-clip-text text-transparent bg-gradient-to-r ${service.color}`}
+                    <Card
+                      className={`h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-gradient-to-br ${service.bgColor} group  relative`}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <CardHeader className="relative z-10">
+                        <div
+                          className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110`}
+                        >
+                          <service.icon className="w-7 h-7 text-white" />
+                        </div>
+                        <CardTitle className="text-2xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+                          {service.title}
+                        </CardTitle>
+                        <CardDescription className="text-base text-slate-600 leading-relaxed group-hover:text-slate-700">
+                          {service.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="relative z-10">
+                        <ul className="space-y-4">
+                          {service.features.map((feature, featureIndex) => (
+                            <motion.li
+                              key={feature}
+                              className="flex items-start gap-3 text-sm text-slate-600 group-hover:text-slate-700 transition-colors"
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{
+                                delay: featureIndex * 0.1,
+                                duration: 0.3,
+                              }}
+                              viewport={{ once: true }}
                             >
-                              {feature}
-                            </span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
+                              <div
+                                className={`w-1.5 h-1.5 text-lg bg-gradient-to-r ${service.color} rounded-full mt-2 flex-shrink-0`}
+                              ></div>
+                              <span
+                                className={`text-base font-medium bg-clip-text text-transparent bg-gradient-to-r ${service.color}`}
+                              >
+                                {feature}
+                              </span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+              {/* Right: Image container */}
+              <div className="hidden md:flex flex-1 flex-col items-start justify-center gap-6">
+                <img
+                  src="/some_img.jpg" // replace with your image path
+                  alt="Description 1"
+                  className="max-w-full h-auto rounded-lg pt-0 mt-0 shadow-lg"
+                />
+                <img
+                  src="/profile_right.jpg" // replace with your image path
+                  alt="Description 2"
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                />
+                <img
+                  src="/some_useful.jpg" // replace with your image path
+                  alt="Description 2"
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
