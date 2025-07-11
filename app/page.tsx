@@ -704,20 +704,20 @@ export default function EnhancedAdvocatePortfolio() {
                 ))}
               </motion.div>
               {/* Right: Image container */}
-              <div className="hidden md:flex flex-1 flex-col items-start justify-center gap-6">
+              <div className="hidden md:flex flex-1 flex-col items-start justify-start gap-10 pt-0 mt-0">
                 <img
-                  src="/some_img.jpg" // replace with your image path
+                  src="/some_img.jpg"
                   alt="Description 1"
-                  className="max-w-full h-auto rounded-lg pt-0 mt-0 shadow-lg"
+                  className="max-w-full h-auto rounded-lg shadow-lg m-0 p-0"
                 />
                 <img
-                  src="/profile_right.jpg" // replace with your image path
+                  src="/profile_maybe.jpg"
                   alt="Description 2"
                   className="max-w-full h-auto rounded-lg shadow-lg"
                 />
                 <img
-                  src="/some_useful.jpg" // replace with your image path
-                  alt="Description 2"
+                  src="/some_useful.jpg"
+                  alt="Description 3"
                   className="max-w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
