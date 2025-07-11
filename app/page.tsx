@@ -711,7 +711,7 @@ export default function EnhancedAdvocatePortfolio() {
                   className="max-w-full h-auto rounded-lg shadow-lg m-0 p-0"
                 />
                 <img
-                  src="/profile_maybe.jpg"
+                  src="/profile_maybe1.jpg"
                   alt="Description 2"
                   className="max-w-full h-auto rounded-lg shadow-lg"
                 />
